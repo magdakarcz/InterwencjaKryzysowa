@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <!-- KLUCZOWE DLA RESPONSYWNOŚCI: Poprawne skalowanie na urządzeniach mobilnych -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="referrer" content="no-referrer">
+    <title>Interwencja – Visual Novel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game">
+        <!-- START SCREEN -->
+        <div id="startScreen" class="start-screen">
+            <h1>Zespół Mobilny OIK</h1>
+            <p>Trening Interwencji Terenowej: Ciemna Klatka</p>
+            <button class="start-btn" onclick="startIntro()">Rozpocznij Wyjazd</button>
+        </div>
+
+        <!-- INTRO FILM SCENE -->
+        <div id="intro" class="intro-scene">
+            <div id="introBg" class="intro-bg"></div>
+            <div class="intro-text" id="introStory"></div>
+            <button id="skipIntroBtn" class="skip-btn" onclick="skipIntro()">Pomiń wstęp ⏭</button>
+        </div>
+
+        <!-- GAME SCENE -->
+        <div id="scene" class="scene">
+            <div class="scene-bg"></div>
+            <img id="avatar" class="avatar">
+        </div>
+
+        <!-- STATS HUD -->
+        <div class="stats" id="stats">Profesjonalizm: 50</div>
+
+        <!-- FLOATING CHOICES -->
+        <div id="choices" class="choices"></div>
+
+        <!-- BOTTOM DIALOG BOX -->
+        <div id="dialogUI" class="dialog-container" style="display: none;">
+            <div id="role" class="role">Imię postaci</div>
+            <div class="dialog">
+                <div id="story" class="story">Tekst dialogu...</div>
+            </div>
+        </div>
+
+        <!-- FEEDBACK MODAL -->
+        <div id="feedbackModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-title">Komentarz Trenera</div>
+                <div id="modalText" class="modal-text">Tu pojawi się wyjaśnienie...</div>
+                <button class="modal-btn" onclick="closeModal()">Dalej</button>
+            </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <div id="summary" class="summary">
+            <h2>Debriefing Prowadzącego</h2>
+            <p id="summaryText"></p>
+            <button onclick="restart()">Rozegraj ponownie</button>
+        </div>
+    </div>
+
+    <!-- Skrypty -->
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
